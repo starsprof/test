@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true"
+         bootstrap="vendor/autoload.php"
+         failOnRisky="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
+         verbose="true"
+>
+    <testsuites>
+        <testsuite name="Array">
+            <directory>./test/arrayTests</directory>
+        </testsuite>
+<!--        <testsuite name="Tickets">-->
+<!--            <directory>tickets</directory>-->
+<!--        </testsuite>-->
+    </testsuites>
+</phpunit>
