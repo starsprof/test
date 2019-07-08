@@ -33,7 +33,7 @@ class ArrayTask
 
     }
     /**
-     * Вернуть все числа, меньшие $number и больше 0, у которых есть хотя бы одна цифра 3 и которые не делятся на 5.
+     * Вернуть все числа, меньшие $number и больше 0, у которых есть хотя бы одна цифра 3 и которые делятся на 5.
      * @param int $number
      * @return array
      */
@@ -49,7 +49,7 @@ class ArrayTask
      */
     public function task_04(array $data): bool
     {
-       return count(array_unique($data))<count($data);
+        
     }
 
     /**
@@ -91,7 +91,7 @@ class ArrayTask
      */
     public function task_08(array $data): array
     {
-        return array_unique($data);
+
     }
 
     /**
