@@ -3,8 +3,8 @@
          bootstrap="vendor/autoload.php"
          failOnRisky="false"
          processIsolation="false"
-         stopOnError="false"
-         stopOnFailure="false"
+         stopOnError="true"
+         stopOnFailure="true"
          printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
          verbose="true"
 >
