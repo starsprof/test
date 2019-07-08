@@ -12,8 +12,8 @@
         <testsuite name="Array">
             <directory>./test/arrayTests</directory>
         </testsuite>
-<!--        <testsuite name="Tickets">-->
-<!--            <directory>tickets</directory>-->
-<!--        </testsuite>-->
+        <testsuite name="String">
+            <directory>./test/stringTests</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
