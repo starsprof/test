@@ -4,6 +4,9 @@
 namespace PhpTutorial\tasks;
 
 
+
+use InvalidArgumentException;
+
 class StringTask
 {
 
@@ -33,7 +36,18 @@ class StringTask
      */
     public function task_02(string $str): string
     {
-
+        if (empty($str)) {
+            throw new InvalidArgumentException();
+        }
+        if (strpos($str, '/') >= 0) {
+            $tmp = explode('/', $str);
+            return array_pop($tmp);
+        }
+        if (strpos($str, '\\') >= 0) {
+            $tmp = explode('\\', $str);
+            return array_pop($tmp);
+        }
+        return $str;
     }
 
     /**
@@ -46,6 +60,13 @@ class StringTask
     public function task_03(string  $str): string
     {
 
+        $words = explode(' ', $str);
+        array_walk($words, function (&$word) {
+            $word = strtolower($word);
+            $word = ucfirst($word);
+        });
+        $camelCase = implode($words);
+        return lcfirst($camelCase);
     }
 
     /**
@@ -55,11 +76,18 @@ class StringTask
      * Input: 'Ярославский вокзал шибал свежестью' $n=22
      * Output: 'Ярославский вокзал...'
      * @param string $str
+     * @param int $n
      * @return string
      */
-    public function task_04(string $str, $n): string
+    public function task_04(string $str, int $n): string
     {
-
+        if(strlen($str) < $n || $n < 0){
+            throw new InvalidArgumentException();
+        }
+        $string = wordwrap($str, $n);
+        $string = explode("\n", $string, 2);
+        $string = $string[0] . '...';
+        return $string;
     }
 
     /** Напишите функцию, которая возвращает строку $str, очищенную от всех HTML-тегов.
@@ -70,7 +98,7 @@ class StringTask
      */
     public function task_05(string $str): string
     {
-
+        return strip_tags($str);
     }
 
     /**
@@ -83,7 +111,10 @@ class StringTask
      */
     public function task_06(string $str): string
     {
-
+        $words = explode(',', $str);
+        $words = array_map('trim', $words);
+        $words = array_unique($words);
+        return implode(', ', $words);
     }
 
 }

@@ -6,8 +6,8 @@ options:
   cd-printer-anybar: false
   cd-printer-anybar-port: 1738
 markers:
-  cd-pass: "✔ "
-  cd-fail: "✖ "
+  cd-pass: "v "
+  cd-fail: "x "
   cd-error: "⚈ "
   cd-skipped: "=> "
   cd-incomplete: "∅ "
