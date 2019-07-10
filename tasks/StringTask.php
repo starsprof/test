@@ -61,10 +61,8 @@ class StringTask
     {
 
         $words = explode(' ', $str);
-        array_walk($words, function (&$word) {
-            $word = strtolower($word);
-            $word = ucfirst($word);
-        });
+        $words = array_map('strtolower', $words);
+        $words = array_map('ucfirst', $words);
         $camelCase = implode($words);
         return lcfirst($camelCase);
     }
